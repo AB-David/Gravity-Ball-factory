@@ -4,8 +4,11 @@
 This is one of the projects I was working on to get my professional certificate in Full Stack Development by MIT xPro. 
 If you are curious about this rigorous program you can learn more about it [here](https://youtu.be/5CiCtj_2Qsg).
 
-## A ball factory
+## Ball factory
 This will create any number of balls, then bounce them within a defined area while taking gravity into consideration.
+
+# *Demo*
+![demo](https://bit.ly/3a6KEUD)
 
 ### *Usage*: 
 1. Open the file then the IDE 
