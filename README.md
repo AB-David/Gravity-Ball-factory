@@ -1,4 +1,4 @@
-[MIT logo](https://bit.ly/2MonZuG)
+![MIT logo](https://bit.ly/2MonZuG)
 
 #MIT xPro Project 💻
 This is one of the projects I was working on to get my professional certificate in Full Stack Development by MIT xPro. 
