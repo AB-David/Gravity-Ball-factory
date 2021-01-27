@@ -1,0 +1,80 @@
+<link rel="stylesheet" type="text/css" href="mystyle.css" />
+<body>
+  <script src="ball.js"></script>
+  <script>
+    const size = 25; // size of ball
+    const x = []; // position
+    const y = []; //position
+    const balls = []; // array to hold all free balls
+    const stepSize = 5; // step size every update
+    let velocity_x = [];
+    let velocity_y = [];
+    let gravity = 1;
+    var colors=[
+  "linear-gradient(90deg, #1CB5E0 0%, #000851 100%)",
+  "linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%)",
+  "linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%)",
+  "linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%)",
+  "linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%)",
+  "linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%)",
+  "linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%)",
+  "linear-gradient(90deg, #4b6cb7 0%, #182848 100%)",
+  "linear-gradient(90deg, #9ebd13 0%, #008552 100%)",
+  "linear-gradient(90deg, #0700b8 0%, #00ff88 100%)",
+  "linear-gradient(90deg, #d53369 0%, #daae51 100%)",
+  "linear-gradient(90deg, #efd5ff 0%, #515ada 100%)",
+  "linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%)",
+  "linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%)",
+  "linear-gradient(90deg, #fcff9e 0%, #c67700 100%)", 
+];
+
+    function checkWalls(i) {
+      if (x[i] < 0 || x[i] > 800) velocity_x[i] = -velocity_x[i];
+      if (y[i] > 400) {
+        velocity_y[i] = -velocity_y[i];
+        y[i] = 400;
+      }
+    }
+
+    function getRandomGradient(){
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    function update() {
+      for (let i = 0; i < balls.length; i++) {
+        x[i] += velocity_x[i];//                       x[i]          = x[i] + velocity_x[i];
+        velocity_y[i] += gravity;//                    velocity_y[i] = velocity_y[i] + gravity;
+        y[i] += velocity_y[i];      //                 y[i]          = y[i] +  velocity_y[i];
+        checkWalls(i);
+        balls[i].style.left = x[i];  // 
+        balls[i].style.top = y[i];
+      }
+      setTimeout(update, 50); // this calls update ever 1/10 second
+    }
+    function getRandom(scale) {
+      return Math.random() * scale;
+    }
+    function factory(total) {//makes a loop of whatever total is, and creates new balls by calling 'makeBall' function (that function is in the ball.js file, it creates a ball by pushing a 'ball' into the array called 'balls')
+      // check how make balls exist already and add to the array
+      let n = balls.length;
+      for (let i = 0; i < total; i++) {
+        let velx = Math.floor(getRandom(20) - 10);
+        let vely = Math.floor(getRandom(20) - 10);
+        makeBall(getRandom(800), getRandom(400), getRandomGradient(), velx, vely, 0);
+      }
+    }
+  </script>
+  <div class="svg-container">
+    <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <rect
+        x="0"
+        y="0"
+        width="840"
+        height="430"
+        stroke="black"
+        fill="transparent"
+        stroke-width="5"
+      />
+    </svg>
+  </div>
+</body>
