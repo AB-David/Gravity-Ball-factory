@@ -5,7 +5,7 @@ This is one of the projects I was working on to get my professional certificate 
 If you are curious about this rigorous program you can learn more about it [here](https://youtu.be/5CiCtj_2Qsg).
 
 ## Ball factory
-This will create any number of balls, then bounce them within a defined area while taking gravity into consideration.
+This will create any number of balls in different colors, then bounce them within a defined area while taking gravity into consideration.
 
 # *Demo*
 ![demo](https://bit.ly/3t3hi1M)
