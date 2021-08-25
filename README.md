@@ -8,7 +8,7 @@ If you are curious about this rigorous program you can learn more about it [here
 This will create any number of balls in different colors, then bounce them within a defined area while taking gravity into consideration.
 
 # *Demo*
-![demo](https://bit.ly/3t3hi1M)
+![demo](https://bit.ly/3sKweCi)
 
 ### *Usage*: 
 1. Open the IDE 
